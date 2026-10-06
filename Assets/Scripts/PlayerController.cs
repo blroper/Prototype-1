@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float turnSpeed;
-    public InputAction moveAction;
-    public Vector2 moveInput;
+    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float turnSpeed;
+    [SerializeField] private InputAction moveAction;
+    [SerializeField] private Vector2 moveInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
        
        moveInput = moveAction.ReadValue<Vector2>();
